@@ -31,7 +31,7 @@ SLL::~SLL(){
 void SLL::printSLL(){
 	SNode *i = first;
 	while(i != NULL){
-		first->printNode();
+		i->printNode();
 		i = i->next;
 	}
 }

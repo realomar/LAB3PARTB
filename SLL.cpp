@@ -23,6 +23,8 @@ SLL::~SLL(){
 		delete first;
 		first = i;
 		size--;
+		first = NULL;
+		last = NULL;
 	}
 }
 
@@ -48,12 +50,14 @@ void SLL::insertInOrder(int r, string c){
 	}
 
 	else{
+		cout << "else condition hit" << endl;
 		SNode *i = first;
 		while(i->next != NULL){
 			if(r > i->rating && r < i->next->rating){
 				SNode *s = new SNode(r,c);
 				s->next = i->next;
 				i->next = s;
+				size++;
 			}
 		}
 	}
@@ -86,7 +90,7 @@ int SLL::pop(){
 	if (first != last ){
 		SNode *x = first;
 
-		for (int i = 0; i < size-1;i++) {
+		for (int i = 0; i < size;i++) {
 			x = x->next;
 		}
 		delete last;

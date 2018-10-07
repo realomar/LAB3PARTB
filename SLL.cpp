@@ -70,7 +70,7 @@ void SLL::addAtFront(int r, string c){
 	SNode *i = new SNode(r,c);
 	i->next = first;
 	first = i;
-	size++
+	size++;
 }
 
 void SLL::addFirst(int r, string c){

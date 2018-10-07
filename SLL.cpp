@@ -35,10 +35,28 @@ void SLL::printSLL(){
 }
 
 void SLL::insertInOrder(int r, string c){
-	SNode *i = first;
-	if (i == NULL || r < i->rating) addFirst(r,c);
-	else if(r > i->rating) push(r,c);
+	if(first == NULL){
+		addFirst(r,c);
+	}
 
+	else if(r < first->rating){
+		addAtFront(r,c);
+	}
+
+	else if(r > last->rating){
+		push(r,c);
+	}
+
+	else{
+		SNode *i = first;
+		while(i->next != NULL){
+			if(r > i->rating && r < i->next->rating){
+				SNode *s = new SNode(r,c);
+				s->next = i->next;
+				i->next = s;
+			}
+		}
+	}
 }
 
 void SLL::push(int r, string c){
@@ -91,5 +109,11 @@ int SLL::pop(){
 }
 
 double SLL::getAve(){
-
+	SNode *i = first;
+	double total = 0;
+	while(i->next != NULL){
+		total += i->rating;
+		i = i->next;
+	}
+	return total / (double) size;
 }

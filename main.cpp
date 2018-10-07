@@ -15,7 +15,7 @@ int main() {
 	for (int i = 0; i < 10; i++) {
 		list->insertInOrder(r[i],s[i]);
 		list->printSLL();
-		cout << i << " loops done" << endl;
+		cout << i << " loops done" << endl; // remove this line in final
 	}
 	cout << "Ave: "<< list->getAve() << endl;
 	cout << "Popping " << list->pop() << endl;

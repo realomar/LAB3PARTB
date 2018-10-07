@@ -34,6 +34,6 @@ void SNode::printNode(){ // prints node information
 
 SNode::~SNode(){ // this destructor warns the user if they delete a node that isn't at the end of its list;
 	if(next != NULL){
-		cout << "WARNING: missing link in LinkedList" << endl;
+		cout << "deleting " << rating << ", " << comments << endl;
 	}
 }

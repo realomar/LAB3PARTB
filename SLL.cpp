@@ -32,6 +32,7 @@ void SLL::printSLL(){
 		i->printNode();
 		i = i->next;
 	}
+	cout << endl;
 }
 
 void SLL::insertInOrder(int r, string c){

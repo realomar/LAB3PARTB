@@ -27,13 +27,13 @@ SNode::SNode(int r, string c){ // this constructor reads values from parameter
 	next = NULL;
 }
 
+void SNode::printNode(){ // prints node information
+	cout << "Rating: " << rating << ", ";
+	cout << "Comments: " << comments << endl;
+}
+
 SNode::~SNode(){ // this destructor warns the user if they delete a node that isn't at the end of its list;
 	if(next != NULL){
 		cout << "WARNING: missing link in LinkedList" << endl;
 	}
-}
-
-void SNode::printNode(){ // prints node information
-	cout << "Rating: " << rating << ", ";
-	cout << "Comments: " << comments << endl;
 }
